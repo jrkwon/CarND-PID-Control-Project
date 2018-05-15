@@ -3,6 +3,18 @@ Self-Driving Car Engineer Nanodegree Program
 
 ---
 
+## Reflection
+
+### The Effects of the P, I, and D components
+
+* The P (Proportional) component minimizes the CTE by changing the steering angle proportionally to the CTE. When the CTE value is large, the steering angle often becomes too large so that the vehicle overshoots the desired track. [Here](https://youtu.be/2ZpMfWfiFnc) is an example video.
+* The D (Differential) component slows down the changes made by the P component. If the D is too big, then it would take longer for the vehicle to approach the desired track. An example video is at [here](https://youtu.be/lR9RzdZ5yW0) where the P and D components are used. As you can see in the example video, the sudden changes of the steering angle are mostly mitigated. 
+* The I (Integral) component adds up or subtracts the CTE along the time. The integral contributes to not only the magnitude of an error but also the duration of the error. The I component is also considered as the area of an error signal's curve. The example video at [here](https://youtu.be/ea4LIPdZQlg) uses all P, D, and I components.
+
+### Tuning Hyperparameters
+
+There are several methods to tune P, I, and D gain. Due to the simplicity of the problem, I chose the manual tuning. I started with the P gain by setting 0.5, and saw how the car was being driven. When the steering value was too big, a smaller value was chosen by a kind of binary search. `(0.1, (0.5 + 0.1)/2, ...)`. I made the I as smaller as possible to relief the effect of continuous errors. And the D value was similarly chosen as the I component. I started with a large value compared to the P since the steering value seemed too large at the initial stage. My choice of the hyperparameters was `P_gain: 0.135, I_gain: 0.0003, D_gain: 3.0`.
+
 ## Dependencies
 
 * cmake >= 3.5
@@ -95,4 +107,3 @@ still be compilable with cmake and make./
 
 ## How to write a README
 A well written README file can enhance your project and portfolio.  Develop your abilities to create professional README files by completing [this free course](https://www.udacity.com/course/writing-readmes--ud777).
-
