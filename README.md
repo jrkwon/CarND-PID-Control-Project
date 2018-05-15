@@ -13,7 +13,7 @@ Self-Driving Car Engineer Nanodegree Program
 
 ### Tuning Hyperparameters
 
-There are several methods to tune P, I, and D gain. Due to the simplicity of the problem, I chose the manual tuning. I started with the P gain by setting 0.5, and saw how the car was being driven. When the steering value was too big, a smaller value was chosen by a kind of binary search. `(0.1, (0.5 + 0.1)/2, ...)`. I made the I as smaller as possible to relief the effect of continuous errors. And the D value was similarly chosen as the I component. I started with a large value compared to the P since the steering value seemed too large at the initial stage. My choice of the hyperparameters was `P_gain: 0.135, I_gain: 0.0003, D_gain: 3.0`.
+There are several methods to tune P, I, and D gain. Due to the simplicity of the problem, I chose the manual tuning. I started with the P gain by setting 0.5, and saw how the car was being driven. When the steering value was too big, a smaller value was chosen by a kind of binary search. `(0.1, (0.5 + 0.1)/2, ...)`. I made the I as smaller as possible to relief the effect of continuous errors. And the D value was similarly chosen as the P component. I started with a large value compared to the P since the steering value seemed too high at the initial stage. My choice of the hyperparameters was `P_gain: 0.135, I_gain: 0.0003, D_gain: 3.0`.
 
 ## Dependencies
 
