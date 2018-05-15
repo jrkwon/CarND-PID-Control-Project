@@ -9,7 +9,7 @@ Self-Driving Car Engineer Nanodegree Program
 
 * The P (Proportional) component minimizes the CTE by changing the steering angle proportionally to the CTE. When the CTE value is large, the steering angle often becomes too large so that the vehicle overshoots the desired track. [Here](https://youtu.be/2ZpMfWfiFnc) is an example video.
 * The D (Differential) component slows down the changes made by the P component. If the D is too big, then it would take longer for the vehicle to approach the desired track. An example video is at [here](https://youtu.be/lR9RzdZ5yW0) where the P and D components are used. As you can see in the example video, the sudden changes of the steering angle are mostly mitigated. 
-* The I (Integral) component adds up or subtracts the CTE along the time. The integral contributes to not only the magnitude of an error but also the duration of the error. The I component is also considered as the area of an error signal's curve. The example video at [here](https://youtu.be/ea4LIPdZQlg) uses all P, D, and I components.
+* The I (Integral) component adds up or subtracts the CTE along the time. The integral contributes to not only the magnitude of an error but also the duration of the error. The I component is also considered as the area of an error signal's curve. The example video at [here](https://youtu.be/ea4LIPdZQlg) uses all P, D, and I components. You can see the driving is smoother than the case where the P and D were used above.
 
 ### Tuning Hyperparameters
 
